@@ -1,5 +1,6 @@
 package com.levelup.levelup.controller;
 
+import com.levelup.levelup.dto.LoginRequest;
 import com.levelup.levelup.dto.PlayerCreateRequest;
 import com.levelup.levelup.dto.PlayerCreateResponse;
 import com.levelup.levelup.model.Player;
@@ -21,5 +22,10 @@ public class PlayerController {
     @GetMapping("/{id}")
     public Player getPlayerById(@PathVariable Long playerId){
         return playerService.getPlayerById(playerId);
+    }
+
+    @PostMapping("/login")
+    public PlayerCreateResponse login(@RequestBody LoginRequest loginRequest){
+        return playerService.login(loginRequest);
     }
 }

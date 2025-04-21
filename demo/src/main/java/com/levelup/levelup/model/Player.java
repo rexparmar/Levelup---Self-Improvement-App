@@ -132,7 +132,7 @@ public class Player {
     }
 
     public String getPassword() {
-        return currentClass;
+        return password;
     }
 
     public void setPassword(String password) {
