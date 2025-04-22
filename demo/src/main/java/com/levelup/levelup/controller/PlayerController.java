@@ -28,4 +28,9 @@ public class PlayerController {
     public PlayerCreateResponse login(@RequestBody LoginRequest loginRequest){
         return playerService.login(loginRequest);
     }
+
+    @PostMapping("/levelup/{id}/{xp}")
+    public Player addXp(@PathVariable Long id,@PathVariable int xp){
+        return playerService.addXp(id,xp);
+    }
 }
